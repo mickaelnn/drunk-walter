@@ -15,6 +15,11 @@ const routes: Routes = [
     path: 'water',
     loadChildren: () => import('./water/water.module').then( m => m.WaterPageModule)
   },
+  {
+    path: 'config',
+    loadChildren: () => import('./config/config.module').then( m => m.ConfigPageModule)
+  },
+
 ];
 
 @NgModule({

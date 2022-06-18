@@ -4,6 +4,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="background-image">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Drunk Walter</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <div id="container">
+    <div class="header">
+      <ion-label>Porcentagem de agua ingerida do dia</ion-label>
+      <ion-progress-bar value=".33"></ion-progress-bar>
+    </div>
+    <hr>
+    <div class="item-header">
+      <ion-label>Hora tomar agua</ion-label>
+    </div>
+    <hr>
+    <div class="item">
+      <ion-label>15:00</ion-label>
+      <ion-radio class="item-radio" slot="start" value="15"></ion-radio>
+    </div>
+    <hr>
+    <div class="item">
+      <ion-label>16:00</ion-label>
+      <ion-radio class="item-radio" slot="start" value="16"></ion-radio>
+    </div>
+    <hr>
+    <div class="item">
+      <ion-label>17:00</ion-label>
+      <ion-radio class="item-radio" slot="start" value="17"></ion-radio>
+    </div>
+  </div>
 </ion-content>

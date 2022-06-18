@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>config</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background-image">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Drunk Walter</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+  <strong>Drunk Walter</strong>
+  <div>
+    <ion-label>Genero</ion-label>
+  </div>
+  <ion-radio-group value="vif">
+    <div>
+      <ion-label>Masculino</ion-label>
+      <ion-radio slot="start" value="male"></ion-radio>
+    </div>
+    <div>
+      <ion-label>Feminino</ion-label>
+      <ion-radio slot="start" value="female"></ion-radio>
+    </div>
+  </ion-radio-group>
+  <div>
+    <ion-label>Peso</ion-label>
+    <ion-input type="text" [(ngModel)]="peso"></ion-input>
+  </div>
+  <div>
+    <ion-label>Altura</ion-label>
+    <ion-input type="text" [(ngModel)]="Altura"></ion-input>
+  </div>
+  <ion-input style="background-color: #faf;"></ion-input>
+
+    </div>
+</ion-content>
