@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'water',
+    loadChildren: () => import('./water/water.module').then( m => m.WaterPageModule)
+  },
 ];
 
 @NgModule({
