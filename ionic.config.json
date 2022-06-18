@@ -1,0 +1,7 @@
+{
+  "name": "Drunk Walter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
