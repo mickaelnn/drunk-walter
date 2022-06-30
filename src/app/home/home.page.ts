@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { StorageService, DrinkLista } from '../services/storage.service';
+import { ToastController } from '@ionic/angular';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +9,43 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  drinks: DrinkLista[];
+  constructor(
+    private router: Router,
+    private storageService: StorageService,
+    private toast: ToastController
+  ) {}
 
-  constructor() {}
+ionViewDidEnter() {
+  this.storageService.getAll()
+    .then((result) => {
+      this.drinks = result;
+    });
+}
+
+editaDrink(item: DrinkLista) {
+  const navExtras = {
+    state: {
+      valorParaEnviar: {
+        key: item.key,
+        drink: item.drink,
+      }
+    }
+  };
+  this.router.navigate(['edita-tarefa'], navExtras);
+}
+
+removeDrink(item: DrinkLista) {
+  this.storageService.remove(item.key)
+    .then(async () => {
+      const index = this.drinks.indexOf(item);
+      this.drinks.splice(index, 1);
+      (await this.toast.create({
+        message: 'Tarefa removida.',
+        duration: 3000,
+        position: 'bottom',
+      })).present();
+    });
+}
 
 }
