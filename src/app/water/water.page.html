@@ -10,16 +10,19 @@
       <ion-title size="large">Drunk Walter</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <div id="container">
-    <div class="header">
-      <ion-label>Porcentagem de agua ingerida do dia</ion-label>
-      <ion-progress-bar value=".66"></ion-progress-bar>
-    </div>
     <hr>
     <div class="item-header">
-      <ion-label>Hora tomar agua</ion-label>
     </div>
-    <ion-icon slot="start" name="create" size="large" (click)="editaDrink(item);" color="dark"></ion-icon>
+    <ion-list *ngFor="let drink of drinks">
+      <ion-item>
+        <ion-label>{{drink.drink.quantidade}}</ion-label>
+        <ion-label>{{drink.drink.hora}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-fab-button [routerLink]="['/', 'edita-drink']" color="danger" style="margin: auto; padding: 10px;">
+      <ion-icon name="add" ></ion-icon>
+      <ion-icon slot="start" name="create" size="large" (click)="editaDrink(item);" color="dark"></ion-icon>
+    </ion-fab-button>
   </div>
 </ion-content>

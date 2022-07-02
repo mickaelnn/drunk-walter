@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>edita-drink</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+  <ion-item>
+
+    <ion-label position="floating">Quantidade tomada</ion-label>
+
+    <ion-input type="text" name="quantidade" [(ngModel)]="model.quantidade"></ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label position="floating">Hora</ion-label>
+
+    <ion-input type="text" name="hora" [(ngModel)]="model.hora"></ion-input>
+
+  </ion-item>
+
+  </ion-list>
+
+  <ion-button expand="block"  (click)="save()" [routerLink]="['/', 'water']">Salvar</ion-button>
+
+</ion-content>

@@ -32,6 +32,7 @@ async createDB() {
       const drink = new DrinkLista();
       drink.key = key;
       drink.drink = value;
+      console.log(drink);
       drinks.push(drink);
     })
       .then(() => (Promise.resolve(drinks)))
@@ -53,10 +54,8 @@ async createDB() {
 }
 
 export class Drink {
-  nome: string;
-  local: string;
-  data: Date;
-  status: boolean;
+  quantidade: string;
+  hora: string;
 }
 
 export class DrinkLista {

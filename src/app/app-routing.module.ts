@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'config',
     loadChildren: () => import('./config/config.module').then( m => m.ConfigPageModule)
+  },  {
+    path: 'edita-drink',
+    loadChildren: () => import('./edita-drink/edita-drink.module').then( m => m.EditaDrinkPageModule)
   },
+
 
 ];
 
